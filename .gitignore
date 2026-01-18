@@ -1,0 +1,28 @@
+# Virtual Environment (uv usually creates .venv, but covering both)
+.venv
+venv/
+ENV/
+
+# Python defaults
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.egg-info/
+
+# Environment Variables (Safety first!)
+.env
+.env.local
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints
+
+# VS Code settings (Optional, but often good to ignore personal settings)
+.vscode/
+
+# Common Data Science files (prevent accidental commit of large data)
+*.csv
+*.parquet
+*.feather
+*.pkl
