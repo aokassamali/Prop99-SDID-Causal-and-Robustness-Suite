@@ -1,0 +1,14 @@
+{
+    "treat_start_idx": 19,
+    "n_pre": 19,
+    "n_post": 12,
+    "N": 39,
+    "T": 31,
+    "treated_unit_id": 3,
+    "treat_start_year": 1989,
+    "T0_year": 1988,
+    "year_min": 1970,
+    "year_max": 2000,
+    "raw_sha256": "50c072eabe7cb0ab9c29d163b13063de27d4543c92c7ddeb3beb6780273bef9c",
+    "saved_at": "data\\processed"
+}

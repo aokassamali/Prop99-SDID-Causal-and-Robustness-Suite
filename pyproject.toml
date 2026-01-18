@@ -1,0 +1,20 @@
+[project]
+name = "prop99-sdid-causal-and-robustness-suite"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "causalinference>=0.1.3",
+    "ipykernel>=7.1.0",
+    "linearmodels>=7.0",
+    "matplotlib>=3.10.8",
+    "numpy>=2.4.1",
+    "pandas>=2.3.3",
+    "pyarrow>=22.0.0",
+    "pyyaml>=6.0.3",
+    "scikit-learn>=1.8.0",
+    "seaborn>=0.13.2",
+    "statsmodels>=0.14.6",
+    "tyro>=1.0.5",
+]

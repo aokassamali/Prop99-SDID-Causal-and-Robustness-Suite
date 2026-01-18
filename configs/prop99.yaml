@@ -1,0 +1,15 @@
+dataset:
+  name: prop99_smoking
+  url: https://raw.githubusercontent.com/matheusfacure/python-causality-handbook/master/causal-inference-for-the-brave-and-true/data/smoking.csv
+  raw_path: data/raw/smoking.csv
+
+panel:
+  unit_col: state
+  time_col: year
+  y_col: cigsale
+  treated_unit_id: 3
+  intervention_year: 1988
+  treat_start_year: 1989
+
+repro:
+  seed: 0
