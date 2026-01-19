@@ -18,3 +18,10 @@
 - DD-006 SCM solver choice: use SciPy constrained optimization (SLSQP) for classic SCM weights
     - Why: standard, lightweight in Python, easy to sanity-check
     - Alternative: CVXPY QP (more robust numerics, heavier dependency)
+
+- DD-007 Placebo statistic: primary = RMSPE ratio; secondary = ATT magnitude
+    - Rationale: penalizes designs with poor pre-fit, common in SCM literature.
+
+- DD-08 Time placebo definition: time-placebo evaluation window must end at 1987 (strict pre) to avoid contamination by Prop 99 start.
+
+- DD-09 Time placebo eligibility: require min_pre_periods >= 10 and min_post_periods >= 1 for stability + comparability.

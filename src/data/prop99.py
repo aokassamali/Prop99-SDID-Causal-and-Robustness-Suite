@@ -1,6 +1,7 @@
 import pandas as pd
 from pathlib import Path
 import hashlib
+import json
 
 def load_prop99_raw(source, cache_path) -> tuple[pd.DataFrame, str]:
     path = Path(cache_path)
@@ -41,3 +42,14 @@ def validate_matrix(Y: pd.DataFrame, treated_unit_id: int, treat_start_time: int
         "N": Y.shape[0],
         "T": Y.shape[1]
     }
+
+def load_json_parquet(data_dir: str) -> tuple[pd.DataFrame, dict]:
+    project_root = Path(__file__).resolve().parents[2]
+    folder_path = project_root / data_dir
+    
+    Y = pd.read_parquet(folder_path / "Y.parquet")
+    
+    with open(folder_path / "meta.json", "r") as f:
+        meta = json.load(f)
+
+    return Y, meta

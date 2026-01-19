@@ -5,18 +5,7 @@ import matplotlib.pyplot as plt
 import pandas as pd
 import tyro
 from estimators.scm import fit_scm
-
-
-def load_json_parquet(data_dir: str) -> tuple[pd.DataFrame, dict]:
-    project_root = Path(__file__).resolve().parents[1]
-    folder_path = project_root / data_dir
-    
-    Y = pd.read_parquet(folder_path / "Y.parquet")
-    
-    with open(folder_path / "meta.json", "r") as f:
-        meta = json.load(f)
-
-    return Y, meta
+from data.prop99 import load_json_parquet
 
 def save_plot(results: dict, meta: dict, output_path: Path):
     fig, ax = plt.subplots(figsize=(10, 6))
