@@ -17,9 +17,9 @@ A fully reproducible panel causal inference repo comparing **Synthetic Control (
 Let unit 1 be treated (California), donors be the other states, and let treatment start in year \(T_0+1\).
 
 **Estimand:** Average post-treatment treatment effect on the treated (ATT):
-\[
-\text{ATT} = \frac{1}{T - T_0}\sum_{t>T_0}\left(Y_{1t}(1) - Y_{1t}(0)\right)
-\]
+
+![ATT](https://latex.codecogs.com/svg.image?%5Ctext%7BATT%7D%20%3D%20%5Cfrac%7B1%7D%7BT%20-%20T_0%7D%5Csum_%7Bt%3ET_0%7D%5Cleft(Y_%7B1t%7D(1)%20-%20Y_%7B1t%7D(0)%5Cright))
+
 Operationally, \(Y_{1t}(0)\) is estimated via SCM or SDID.
 
 ---
