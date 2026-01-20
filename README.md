@@ -62,7 +62,7 @@ A key diagnostic in this run: SDID’s learned pre-period time weights ![lambda]
 
 ---
 
-## Inference via placebo tests (randomization-style)
+## Inference via placebo tests 
 
 ### In-space placebo (inference)
 Treat each control state as if it were treated; compare California’s effect to the placebo distribution.
@@ -87,7 +87,7 @@ Fake treatment years entirely in the pre-period (strictly pre-1988) and measure 
 
 ---
 
-## Robustness suite (Script 04)
+## Robustness suite (Script 06)
 
 A single robustness runner generates a unified grid of perturbations across SCM and SDID.
 
@@ -128,13 +128,13 @@ A single robustness runner generates a unified grid of perturbations across SCM 
 
 ---
 
-## How to reproduce (one command)
+## How to reproduce 
 
 This repo is designed to be reproducible end-to-end: build data → estimate SCM/SDID → run placebo inference → run robustness suite → write tables/figures.
 
 Typical workflow:
 1) Create environment and install dependencies
-2) Run the pipeline script(s) that generate:
+2) Run the pipeline script(s) (01-06) that generate:
    - `reports/tables/main_results.json`
    - `reports/tables/robustness_grid.csv`
    - `reports/tables/robustness_summary.json`
@@ -142,7 +142,7 @@ Typical workflow:
 
 ---
 
-## Threats to validity (what a reviewer will ask)
+## Threats to validity 
 
 1) **Pre-period drift / imperfect comparability:**  
    Strict-pre time placebos show mild negative pseudo-effects (especially for SCM), suggesting the treated unit may be drifting relative to donors in the 1980s. SDID partially addresses this by reweighting late pre-years.
@@ -155,7 +155,7 @@ Typical workflow:
 
 ---
 
-## Design decisions (high signal)
+## Design decisions 
 - Treatment begins in 1989 (post), not 1988 (policy enactment year), to avoid contamination from ramp/partial exposure.
 - Placebo-in-time windows are bounded strictly before the enactment year to prevent leakage.
 - Inference uses in-space placebo ranks, reported both unfiltered and with pre-fit filtering.
@@ -163,7 +163,7 @@ Typical workflow:
 
 ---
 
-## References (conceptual)
+## References 
 - Synthetic Control Methods (Abadie et al.)
 - Synthetic Difference-in-Differences (Arkhangelsky et al.)
 
