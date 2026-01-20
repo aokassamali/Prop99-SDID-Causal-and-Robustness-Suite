@@ -1,0 +1,30 @@
+{
+  "treated": {
+    "tau": -10.9013903356417,
+    "pre_rmspe": 23.095262353178196,
+    "post_rmspe": 34.6916110918165,
+    "rmspe_ratio": 1.5021094179967607
+  },
+  "unfiltered": {
+    "n_placebos": 38,
+    "rank_abs": 10,
+    "p_two": 0.2564102564102564,
+    "p_one_neg": 0.15384615384615385
+  },
+  "filtered": {
+    "elig_pre_rmspe_le_treated": {
+      "cutoff": 23.095262353178196,
+      "n_placebos": 32,
+      "rank_abs": 8,
+      "p_two": 0.24242424242424243,
+      "p_one_neg": 0.18181818181818182
+    },
+    "bottom50_pre_rmspe": {
+      "cutoff": 9.150174442339885,
+      "n_placebos": 19,
+      "rank_abs": 2,
+      "p_two": 0.1,
+      "p_one_neg": 0.1
+    }
+  }
+}
