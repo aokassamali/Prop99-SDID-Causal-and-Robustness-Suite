@@ -14,13 +14,13 @@ A fully reproducible panel causal inference repo comparing **Synthetic Control (
 3) Do falsification tests (placebos in space/time) behave as expected?
 
 ### Primary estimand
-Let unit 1 be treated (California), donors be the other states, and let treatment start in year \(T_0+1\).
+Let unit 1 be treated (California), donors be the other states, and let treatment start in year ![T0plus1](https://latex.codecogs.com/svg.image?T_0%2B1).
 
 **Estimand:** Average post-treatment treatment effect on the treated (ATT):
 
 ![ATT](https://latex.codecogs.com/svg.image?%5Ctext%7BATT%7D%20%3D%20%5Cfrac%7B1%7D%7BT%20-%20T_0%7D%5Csum_%7Bt%3ET_0%7D%5Cleft(Y_%7B1t%7D(1)%20-%20Y_%7B1t%7D(0)%5Cright))
 
-Operationally, \(Y_{1t}(0)\) is estimated via SCM or SDID.
+Operationally, ![Y10](https://latex.codecogs.com/svg.image?Y_%7B1t%7D(0)) is estimated via SCM or SDID.
 
 ---
 
@@ -43,12 +43,12 @@ A deterministic build step produces:
 ## Methods (high-level)
 
 ### 1) Synthetic Control (SCM)
-Choose donor weights \(w\) (nonnegative, sum to 1) to match the treated unit’s **pre-treatment** trajectory. The estimated counterfactual is the donor-weighted series.
+Choose donor weights ![w](https://latex.codecogs.com/svg.image?w) (nonnegative, sum to 1) to match the treated unit’s **pre-treatment** trajectory. The estimated counterfactual is the donor-weighted series.
 
 ### 2) Synthetic Difference-in-Differences (SDID)
 SDID augments SCM with **time weights** over the pre-period and estimates a **weighted DID** effect. Intuition: if the treated unit already diverges in late pre-years, SDID can subtract that baseline gap rather than attributing it to treatment.
 
-A key diagnostic in this run: SDID’s learned pre-period time weights \(\lambda\) concentrate heavily on the **late pre years (1986–1988)**, indicating those years are most representative of the “baseline” relevant for post-period comparison.
+A key diagnostic in this run: SDID’s learned pre-period time weights ![lambda](https://latex.codecogs.com/svg.image?%5Clambda) concentrate heavily on the **late pre years (1986–1988)**, indicating those years are most representative of the “baseline” relevant for post-period comparison.
 
 ---
 
@@ -101,7 +101,7 @@ A single robustness runner generates a unified grid of perturbations across SCM 
    - Post aggregation: full post (1989–2000) vs late-post (1995–2000)
 
 3) **SDID regularization sensitivity**
-   - Grid sweep over \((\zeta, \eta)\) (unit-weight and time-weight regularization)
+   - Grid sweep over ![zeta_eta](https://latex.codecogs.com/svg.image?(%5Czeta%2C%5Ceta)) (unit-weight and time-weight regularization)
 
 4) **Falsification recap**
    - In-space placebo ranks/p-values
@@ -124,7 +124,7 @@ A single robustness runner generates a unified grid of perturbations across SCM 
 - SDID max donor weight: **0.259** (effective donors ≈ **5.86**)
 - SDID max time weight: **0.426** (effective pre-years ≈ **2.79**)
 
-**Takeaway:** Conclusions are **sign-robust** across donors/windows/tuning. Magnitudes vary meaningfully with window definitions and SDID’s unit-regularization \(\zeta\), so the repo reports **ranges** (not just point estimates) and documents the hyperparameter selection policy.
+**Takeaway:** Conclusions are **sign-robust** across donors/windows/tuning. Magnitudes vary meaningfully with window definitions and SDID’s unit-regularization ![zeta](https://latex.codecogs.com/svg.image?%5Czeta), so the repo reports **ranges** (not just point estimates) and documents the hyperparameter selection policy.
 
 ---
 
@@ -150,8 +150,8 @@ Typical workflow:
 2) **Window sensitivity:**  
    Effects strengthen when focusing on late post years (1995–2000). This could reflect accumulating policy impact, but it also means magnitude claims should be stated with window context.
 
-3) **Hyperparameter dependence (SDID \(\zeta\)):**  
-   SDID is stable across \(\eta\) but more sensitive to \(\zeta\). This repo reports ranges and documents a selection policy.
+3) **Hyperparameter dependence (SDID ![zeta](https://latex.codecogs.com/svg.image?%5Czeta)):**  
+   SDID is stable across ![eta](https://latex.codecogs.com/svg.image?%5Ceta) but more sensitive to ![zeta](https://latex.codecogs.com/svg.image?%5Czeta). This repo reports ranges and documents a selection policy.
 
 ---
 
